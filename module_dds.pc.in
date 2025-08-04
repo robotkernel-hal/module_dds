@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: module_dds
+Description: robotkernel module_dds is export process data device via DDS.
+URL: rmc-github.robotic.dlr.de:robotkernel/module_dds.git
+Version: @VERSION@
+Cflags: -I@includedir@ 
+
