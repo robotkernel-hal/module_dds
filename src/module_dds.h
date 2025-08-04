@@ -67,19 +67,19 @@ class dds :
 
         //! State transition from PREOP to SAFEOP
         virtual void set_state_safeop_2_preop() override
-        { for (const auto& t : timers) { t->stop(); }; }  
+        { }  
 
         //! State transition from PREOP to SAFEOP
         virtual void set_state_preop_2_init() override
-        { for (const auto& t : timers) { t->deinit(); }; }  
+        { }  
 
         //! State transition from PREOP to SAFEOP
         virtual void set_state_init_2_preop() override
-        { for (const auto& t : timers) { t->init(); }; }  
+        { }  
 
         //! State transition from PREOP to SAFEOP
         virtual void set_state_preop_2_safeop() override
-        { for (const auto& t : timers) { t->start(); }; }  
+        { }  
 };
 
 };
