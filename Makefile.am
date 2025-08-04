@@ -3,7 +3,3 @@ SUBDIRS=src
 
 pkgconfig_DATA = module_dds.pc
 
-install-exec-hook:
-	mkdir -p $(DESTDIR)$(prefix)/doc
-	cp -ru $(top_builddir)/doc/* $(DESTDIR)$(prefix)/doc
-
