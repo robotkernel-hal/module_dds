@@ -56,8 +56,17 @@ jobs:
         shell: bash
         run: |
           apt-get update
-          apt-get install -y build-essential devscripts debhelper autoconf-archive autotools-dev pkg-config sed git tar gzip curl jq libyaml-cpp-dev rsync libddsc-dev
-          
+          apt-get install -y build-essential devscripts debhelper autoconf-archive autotools-dev pkg-config sed git tar gzip curl jq libyaml-cpp-dev rsync 
+
+          case "${{ matrix.distro }}" in
+            debian-11|ubuntu-22.04)
+              apt-get install -y libddsc-dev
+              ;;
+            *)
+              apt-get install -y cyclonedds-dev
+              ;;
+          esac
+
           CODENAME=$(lsb_release -sc)
           curl -fsSL https://deb.burger-system.de/deb.burger-system.de.gpg | tee /usr/share/keyrings/deb.burger-system.de.gpg > /dev/null
           echo "deb [arch=amd64 signed-by=/usr/share/keyrings/deb.burger-system.de.gpg] https://deb.burger-system.de/debian ${CODENAME} main" | tee /etc/apt/sources.list.d/burger-system.list > /dev/null
