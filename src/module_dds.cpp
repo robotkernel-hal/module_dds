@@ -21,7 +21,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "dds.h"
+#include "module_dds.h"
 #include "robotkernel/helpers.h"
 #include <stdlib.h>
 #include <string.h>
